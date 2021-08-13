@@ -26,7 +26,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+#button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -44,7 +44,7 @@
   background: #1201f8;
 }
 .form .message {
-  margin: 15px 0 0;
+  margin: 15px 15px 15px;
   color: #b3b3b3;
   font-size: 12px;
 }
@@ -90,10 +90,10 @@
 }
 body {
   background: #1201f8; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #1201f8, #3d2fff);
-  background: -moz-linear-gradient(right, #1201f8, #3d2fff);
-  background: -o-linear-gradient(right, #1201f8, #3d2fff);
-  background: linear-gradient(to left, #1201f8, #3d2fff);
+  background: -webkit-linear-gradient(right, #1201f8, #ad37fc);
+  background: -moz-linear-gradient(right, #1201f8, #ad37fc);
+  background: -o-linear-gradient(right, #1201f8, #ad37fc);
+  background: linear-gradient(to left, #1201f8, #ad37fc);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
