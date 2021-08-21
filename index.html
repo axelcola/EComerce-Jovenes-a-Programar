@@ -20,19 +20,12 @@
 <body class="text-center">
     <div class="login-page">
       <div class="form">
-        <form class="register-form">
-          <input type="text" placeholder="name" required/>
-          <input type="password" placeholder="password" required/>
-          <input type="text" placeholder="Direccion de email" required/>
-          <button>create</button>
-          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        <form id="formulario "class="login-form" >
+          <input id="user" "type="text" placeholder="username" required/>
+          <input id="pass" type="password" placeholder="password" required/>
+          <p class="message">Not registered? <a href="#">Create an account</a></p>         
         </form>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <p class="message">Not registered? <a href="#">Create an account</a></p>
-        </form>
-        <button id="button">Entrar</button>
+        <button type="" id="button">Entrar</button>
       </div>
     </div>
     </div>
@@ -40,6 +33,6 @@
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
-  <script src="register.js"></script>
+  <script src="js/register.js"></script>
 </body>
 </html>
