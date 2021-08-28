@@ -39,7 +39,11 @@ var getJSONData = function(url){
         return result;
     });
 }
-
+function showUser(){
+  let USER = localStorage.getItem("usuario");
+  let htmlContentToAppend= `<a>` + USER + `</a>`;
+  document.getElementsByTagName("nav").innerHTML = htmlContentToAppend;
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
