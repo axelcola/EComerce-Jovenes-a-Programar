@@ -86,9 +86,6 @@ function sortAndShowProduct(sortCriteria, ProductArray){
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
-            currentProductArray = resultObj.data;
-            //Muestro las categorías ordenadas
-            showProductList(currentProductArray);
             sortAndShowProduct(ORDER_ASC_BY_PRICE, resultObj.data);
         }
     });

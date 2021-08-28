@@ -40,12 +40,15 @@ var getJSONData = function(url){
     });
 }
 function showUser(){
-  let USER = localStorage.getItem("usuario");
-  let htmlContentToAppend= `<a>` + USER + `</a>`;
-  document.getElementsByTagName("nav").innerHTML = htmlContentToAppend;
+  let user = localStorage.getItem("usuario");
+  let htmlContentToAppend= `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">` + user + `</a>`;
+  document.getElementById("nav").innerHTML +=  htmlContentToAppend;
 }
+showUser();
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+ 
 });
