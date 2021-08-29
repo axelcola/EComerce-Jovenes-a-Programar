@@ -39,7 +39,10 @@ var getJSONData = function(url){
         return result;
     });
 }
+<<<<<<< HEAD
  
+=======
+>>>>>>> parent of af05877 (JAP mercado)
 function showUser(){
   let user = localStorage.getItem("usuario");
   let htmlContentToAppend= `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">` + user + `</a>`;
