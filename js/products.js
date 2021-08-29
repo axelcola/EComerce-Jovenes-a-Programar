@@ -37,7 +37,7 @@ function sortProduct(criteria, array){
     return result;
 }
 
-function showProductList(array) {
+function showProductList() {
 
     let htmlContentToAppend = "";
     for (let i = 0; i < currentProductArray.length; i++) {

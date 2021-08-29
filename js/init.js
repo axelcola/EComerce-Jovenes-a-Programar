@@ -52,6 +52,7 @@ function onSignIn(googleUser) {
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
+      location.href = "Home.html";
     }
 function showUser() {
   let user = localStorage.getItem("usuario");
