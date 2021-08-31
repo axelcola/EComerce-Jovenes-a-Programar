@@ -53,11 +53,13 @@ function onSignIn(googleUser) {
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
       localStorage.setItem("usuario", profile.getName());
+      localStorage.setItem("imagen", profile.getImageUrl());
       location.href = "Home.html";
     }
 function showUser() {
   let user = localStorage.getItem("usuario");
-  let htmlContentToAppend = `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">` + user + `</a>`;
+  let imagen = localStorage.getItem("imagen");
+  let htmlContentToAppend = `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">`+ imagen +` `+ user + `</a>`;
   document.getElementById("nav").innerHTML += htmlContentToAppend;
 }
 showUser();
