@@ -60,7 +60,10 @@ function showUser() {
   let user = localStorage.getItem("usuario");
   let imagen = localStorage.getItem("imagen");
   let htmlContentToAppend = `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">`+ imagen +` `+ user + `</a>`;
+  if (localStorage.getItem("usuario")!=undefined){
   document.getElementById("nav").innerHTML += htmlContentToAppend;
+  }else
+  location.href = "Home.html";
 }
 showUser();
 
