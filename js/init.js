@@ -58,11 +58,7 @@ function onSignIn(googleUser) {
 function showUser() {
   let user = localStorage.getItem("usuario");
   let htmlContentToAppend = `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">` + user + `</a>`;
-  if (localStorage.getItem("usuario") !== null && location.href!== "index.html") {
-    document.getElementById("nav").innerHTML += htmlContentToAppend;
-  } else {
-    location.href = "index.html";
-  }
+
 }
 showUser();
 
