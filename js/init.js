@@ -40,6 +40,7 @@ var getJSONData = function (url) {
     });
 }
 function onSignIn(googleUser) {
+  
   // Useful data for your client-side scripts:
   var profile = googleUser.getBasicProfile();
   console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -55,16 +56,24 @@ function onSignIn(googleUser) {
   localStorage.setItem("usuario", profile.getName());
   location.href = "Home.html";
 }
+function lock(){
+  if ( location.href != "index.html" && localStorage.getItem("usuario") === null) {
+    location.href = "index.html";
+  }
+}
+
 function showUser() {
   let user = localStorage.getItem("usuario");
   let htmlContentToAppend = `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">` + user + `</a>`;
-
+  document.getElementById("nav").innerHTML += htmlContentToAppend;
 }
 showUser();
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
+document.addEventListener("DOMContentLoaded", function (e) {+
+  lock();
 
 });
