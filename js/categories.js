@@ -134,13 +134,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 document.getElementById("buscador").addEventListener("input", (event) => {
-
+    let busqueda = document.getElementById("buscador").value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     let htmlContentToAppend = "";
     for (let i = 0; i < currentCategoriesArray.length; i++) {
         let category = currentCategoriesArray[i];
-
-        if (category.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase()) || 
-        category.description.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
+        
+        if (category.name.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(busqueda.toUpperCase()) || 
+        category.description.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(busqueda.toUpperCase())){
 
             htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">

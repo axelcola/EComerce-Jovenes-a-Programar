@@ -139,6 +139,8 @@ document.getElementById("buscador").addEventListener("input", (event) => {
 
         if (product.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase()) || 
         product.description.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
+            const str = "Crème Brulée"
+            str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
             htmlContentToAppend += `
                 <div class="list-group-item list-group-item-action">
