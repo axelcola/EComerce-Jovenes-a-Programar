@@ -45,6 +45,10 @@
   font-size: 38px;
 }
 
+.searchContainer{
+  margin: 40px 40px 300px 40px ;
+}
+
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
