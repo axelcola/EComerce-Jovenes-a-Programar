@@ -139,7 +139,8 @@ document.getElementById("buscador").addEventListener("input", (event) => {
     for (let i = 0; i < currentCategoriesArray.length; i++) {
         let category = currentCategoriesArray[i];
 
-        if (category.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
+        if (category.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase()) || 
+        category.description.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
 
             htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">

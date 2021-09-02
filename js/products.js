@@ -137,7 +137,8 @@ document.getElementById("buscador").addEventListener("input", (event) => {
     for (let i = 0; i < currentProductArray.length; i++) {
         let product = currentProductArray[i];
 
-        if (product.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
+        if (product.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase()) || 
+        product.description.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
 
             htmlContentToAppend += `
                 <div class="list-group-item list-group-item-action">
