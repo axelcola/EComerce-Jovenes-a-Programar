@@ -132,16 +132,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 document.getElementById("buscador").addEventListener("input", (event) => {
-
+    let busqueda = document.getElementById("buscador").value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     let htmlContentToAppend = "";
     for (let i = 0; i < currentProductArray.length; i++) {
         let product = currentProductArray[i];
 
-        if (product.name.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase()) || 
-        product.description.toUpperCase().includes(document.getElementById("buscador").value.toUpperCase())) {
-            const str = "Crème Brulée"
-            str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
+        if (product.name.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(busqueda.toUpperCase()) || 
+        product.description.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(busqueda.toUpperCase())) {
+            
             htmlContentToAppend += `
                 <div class="list-group-item list-group-item-action">
                     <div class="row">
