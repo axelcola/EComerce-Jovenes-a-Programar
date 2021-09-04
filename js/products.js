@@ -45,20 +45,22 @@ function showProductList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
 
             htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">` + product.name + `</h4><h4 style="text-align: right"> ` + product.currency + ` ` + product.cost + ` </h4>
-                        <small class="text-muted">` + product.soldCount + `artículos</small>
+            <a href="product-info.html" class="list-group-item list-group-item-action">
+                <div class="list-group-item list-group-item-action">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                        </div>
+                        <div class="col">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4 class="mb-1">` + product.name + `</h4><h4 style="text-align: right"> ` + product.currency + ` ` + product.cost + ` </h4>
+                                <small class="text-muted">` + product.soldCount + `artículos</small>
+                            </div>
+                            <p class="mb-1"> ` + product.description + `</p>
+                        </div>
                     </div>
-                    <p class="mb-1"> ` + product.description + `</p>
                 </div>
-            </div>
-        </div>
+            </a>
         `
         }
         document.getElementById("listaDeProductos").innerHTML = htmlContentToAppend;
@@ -141,6 +143,7 @@ document.getElementById("buscador").addEventListener("input", (event) => {
         product.description.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(busqueda.toUpperCase())) {
             
             htmlContentToAppend += `
+            <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-3">
@@ -155,7 +158,8 @@ document.getElementById("buscador").addEventListener("input", (event) => {
                         </div>
                     </div>
                 </div>
-                `
+            </a>
+        `
         }
         document.getElementById("listaDeProductos").innerHTML = htmlContentToAppend;
     }
