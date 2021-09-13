@@ -1,5 +1,9 @@
 {
         "editor.fontSize": 16,
         "editor.tabSize": 6,
-        "terminal.integrated.scrollback": 100000
+        "terminal.integrated.scrollback": 100000,
+        "debug.console.fontSize": 18,
+        "scm.inputFontSize": 18,
+        "markdown.preview.fontSize": 18,
+        "terminal.integrated.fontSize": 18
 }
