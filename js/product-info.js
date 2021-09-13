@@ -1,6 +1,33 @@
 var product = {};
-var comments = {};
 var related = {};
+let starsFive =  `<span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>`
+let starsFour =  `<span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star "></span>`
+let starsThree = `<span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star "></span>
+                  <span class="fa fa-star "></span>`
+let starsTwo =   `<span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star "></span>
+                  <span class="fa fa-star "></span>
+                  <span class="fa fa-star "></span>`
+let starsOne =   `<span class="fa fa-star checked"></span>
+                  <span class="fa fa-star "></span>
+                  <span class="fa fa-star "></span>
+                  <span class="fa fa-star "></span>
+                  <span class="fa fa-star "></span>`
+                  
+
+
 function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
@@ -41,9 +68,9 @@ function relatedProducts(array) {
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
                                 <h4 class="mb-1">` + product.name + `</h4><h4 style="text-align: right"> ` + product.currency + ` ` + product.cost + ` </h4>
-                                <small class="text-muted">` + product.soldCount + `artículos</small>
                             </div>
                             <p class="mb-1"> ` + product.description + `</p>
+                            <small class="text-muted">` + product.soldCount + `artículos</small>
                         </div>
                     </div>
                 </div>
@@ -68,19 +95,59 @@ function showComments(array) {
             <div class="row">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">` + comments.user + `</h5><p style="text-align: right"> ` + comments.description + `</p>
-                    <p>` + comments.score + ` </p>
+                    <p id="commentScore">` +stars(comments.score)+ ` </p>
                 </div>
                 <p class="mb-1"> ` + comments.dateTime + `</p>
                 
             </div>
         </div>
-        
+            
         `
 
         document.getElementById("comments").innerHTML = htmlContentToAppend;
+        ;
     }
 }
+document.getElementById("enviar").addEventListener("click", comment)
+function comment(){
+        let user = localStorage.getItem("usuario");
+        let addComment = document.getElementById("comentario").value;
+        let commentToAppend = "";
+    if (addComment!= ""){    
+        
+            commentToAppend = `
+            <div class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">` + user + `</h5><p style="text-align: right"> ` + addComment + `</p>
 
+                    </div>
+                    <p class="mb-1"> 01/02/2022</p>
+
+                </div>
+            </div>
+
+            `
+
+            document.getElementById("comments").innerHTML += commentToAppend;
+    }
+};
+
+ 
+
+function stars(score){
+    if(score === 5){
+        return starsFive;
+    }else if(score == 4){
+        return starsFour;
+    }else if(score === 3){
+        return starsThree;
+    }else if(score === 2){
+        return starsTwo;
+    }else{
+        return starsOne;
+    }
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -122,6 +189,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
             comments = resultObj.data;
 
             showComments(comments);
+            comment();
         }
     });
 });
+

@@ -1,4 +1,5 @@
 {
-        "editor.fontSize": 18,
-        "editor.tabSize": 6
+        "editor.fontSize": 16,
+        "editor.tabSize": 6,
+        "terminal.integrated.scrollback": 100000
 }

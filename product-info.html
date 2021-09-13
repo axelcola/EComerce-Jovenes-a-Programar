@@ -17,7 +17,7 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
+    <div id="nav" class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="Home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -47,6 +47,15 @@
     <div id="relatedProducts"></div>
     <dt>Comentarios</dt>
     <div id="comments"></div>
+    <dt></dt>
+    <div id="comment">
+      <div class="list-group-item list-group-item-action">
+        <div class="col-md-12 mb-3">
+          <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe tu comentario"></textarea>
+          <button class="btn btn-light btn-block" id="enviar" >Enviar</button>
+        </div>
+      </div>     
+    </div>
   </div>
   <footer class="text-muted">
     <div class="container">
@@ -72,3 +81,4 @@
 </body>
 
 </html>
+
