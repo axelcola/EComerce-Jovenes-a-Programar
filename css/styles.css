@@ -122,6 +122,22 @@ footer p {
     transform: rotate(360deg);
   }
 }
+input[type = "radio"]{
+display:none;
+}
+.orden{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+label:hover{
+  color:orange;
+}
+label:hover ~ label{
+  color:orange;
+}
+input[type = "radio"]:checked ~ label{
+  color:orange;
+}
 
 #spinner-wrapper{
   position: fixed;

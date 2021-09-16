@@ -112,6 +112,7 @@ document.getElementById("enviar").addEventListener("click", comment)
 function comment(){
         let user = localStorage.getItem("usuario");
         let addComment = document.getElementById("comentario").value;
+        let commentRaiting = commentStars(document.getElementsByTagName("input"))
         let commentToAppend = "";
     if (addComment!= ""){    
         
@@ -120,7 +121,7 @@ function comment(){
                 <div class="row">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">` + user + `</h5><p style="text-align: right"> ` + addComment + `</p>
-
+                        <p id="commentScore">` +stars(commentRaiting)+ ` </p>
                     </div>
                     <p class="mb-1"> 01/02/2022</p>
 
@@ -128,12 +129,25 @@ function comment(){
             </div>
 
             `
-
             document.getElementById("comments").innerHTML += commentToAppend;
     }
 };
 
- 
+function commentStars (documentRaiting){
+    if (documentRaiting[0].checked) {
+        return 5;        
+    }else if (documentRaiting[1].checked) {
+        return 4;
+    }else if (documentRaiting[2].checked) {
+        return 3;
+    }else if (documentRaiting[3].checked) {
+        return 2;
+    }else if (documentRaiting[4].checked) {
+        return 1;        
+    }
+
+}
+
 
 function stars(score){
     if(score === 5){
@@ -193,4 +207,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 });
-
