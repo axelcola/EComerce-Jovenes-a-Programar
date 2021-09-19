@@ -1,5 +1,13 @@
 var product = {};
 var related = {};
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth() +1 ;
+let yyyy = today.getFullYear();
+let hour = today.getHours();
+let minute = today.getMinutes();
+let second = today.getSeconds();
+let currentDate = `${yyyy}-${mm}-${dd} ${hour}:${minute}:${second}`;
 let starsFive =  `<span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
@@ -123,7 +131,7 @@ function comment(){
                         <h5 class="mb-1">` + user + `</h5><p style="text-align: right"> ` + addComment + `</p>
                         <p id="commentScore">` +stars(commentRaiting)+ ` </p>
                     </div>
-                    <p class="mb-1"> 01/02/2022</p>
+                    <p class="mb-1"> ` + currentDate + `</p>
 
                 </div>
             </div>
