@@ -22,7 +22,6 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
   <div class="container p-5">
@@ -39,12 +38,31 @@
       </dd>
       <dt>Imágenes ilustrativas</dt>
       <dd>
-        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        <div class="container">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="productImagesGallery">
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </div>
-      </dd>
-    </dl>
-    <dt>Productos relacionados</dt>
-    <div id="relatedProducts"></div>
+  </div>
+  </dd>
+  </dl>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <dt>Productos relacionados</dt>
+      <div id="relatedProducts" class="row">
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <dt>Comentarios</dt>
     <div id="comments"></div>
     <dt></dt>
@@ -52,22 +70,23 @@
       <div class="list-group-item list-group-item-action">
         <div class="col-md-12 mb-3">
           <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe tu comentario"></textarea>
-            <p class="orden" id="raiting">    
-              <input id="radio1" type="radio" name="stars" value="1">
-                <label class="fa fa-star" for="radio1"></label>
-              <input id="radio2" type="radio" name="stars" value="2">
-                <label class="fa fa-star" for="radio2"></label>
-              <input id="radio3" type="radio" name="stars" value="3">
-                <label class="fa fa-star" for="radio3"></label>
-              <input id="radio4" type="radio" name="stars" value="4">
-                <label class="fa fa-star" for="radio4"></label>
-              <input id="radio5" type="radio" name="stars" value="5">
-                <label class="fa fa-star" for="radio5"></label>
-            </p>
-          <button class="btn btn-light btn-block" id="enviar" >Enviar</button>
+          <p class="orden" id="raiting">
+            <input id="oneStars" type="radio" name="stars" value="1">
+            <label class="fa fa-star" for="oneStars"></label>
+            <input id="twoStars" type="radio" name="stars" value="2">
+            <label class="fa fa-star" for="twoStars"></label>
+            <input id="threeStars" type="radio" name="stars" value="3">
+            <label class="fa fa-star" for="threeStars"></label>
+            <input id="fourStars" type="radio" name="stars" value="4">
+            <label class="fa fa-star" for="fourStars"></label>
+            <input id="fiveStars" type="radio" name="stars" value="5">
+            <label class="fa fa-star" for="fiveStars"></label>
+          </p>
+          <button class="btn btn-light btn-block" id="enviar">Enviar</button>
         </div>
-      </div>     
+      </div>
     </div>
+  </div>
   </div>
   <footer class="text-muted">
     <div class="container">
@@ -93,4 +112,3 @@
 </body>
 
 </html>
-
