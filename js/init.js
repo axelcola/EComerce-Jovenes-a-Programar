@@ -69,7 +69,7 @@ function showUser() {
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ` + user + `</button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="sell.html">Mi carrito</a>
+                                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
                                   <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
                                   <a class="dropdown-item" href="index.html" onclick="localStorage.clear()">Cerrar sesión</a>
                                 </div>
