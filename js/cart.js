@@ -15,9 +15,9 @@ function showProductCart(productToCart) {
                           </div>
                           <div class="col">
                               <div class="d-flex w-100 justify-content-between">
-                                  <h4 class="mb-1">` + product.name + `</h4><h4 style="text-align: right"> ` + product.currency + ` ` + product.cost + ` </h4>
+                                  <h4 class="mb-1">` + product.name + `</h4><h4 style="text-align: right"> ` + product.currency + ` ` + product.unitCost+ ` </h4>
                               </div>
-                              <p class="mb-1"> ` + product.description + `</p> 
+                              <p class="mb-1"> Cantidad "` + product.count + `"</p> 
                               <small class="text-muted">` + product.soldCount + `artículos</small>
                           </div>
                       </div>
