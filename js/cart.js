@@ -18,7 +18,7 @@ function showProductCart(productToCart) {
                                 <h4 class="mb-1">` + product.name + `</h4>
                             </div>
                             <div class="col-3">
-                              <input type="number" class="form-control" id="productCountInput`+i+`" onchange="calculadora(`+product+`,`+ i +`)" placeholder="" required="" value="` + product.count + `" min="0">
+                              <input type="number" class="form-control" id="productCountInput`+i+`" onchange="calculadora(`+product.unitCost+`,`+ i +`)" placeholder="" required="" value="` + product.count + `" min="0">
                             </div>  
                         </div>
                     </div>
@@ -51,11 +51,11 @@ function calculadora(product, i){
   let result = ""
   if (product.currency != "UYU") {
     
-    result = document.getElementById(identInput).value * product.unitCost * 40;
+    result = document.getElementById(identInput).value * product * 40;
     document.getElementById(identCosto).innerHTML = result;
   }else {
 
-    result = document.getElementById(identInput).value * product.unitCost;
+    result = document.getElementById(identInput).value * product;
     document.getElementById(identCosto).innerHTML = result;
   }
 }
