@@ -18,7 +18,7 @@ function showProductCart(productToCart) {
                                 <h4 class="mb-1">` + product.name + `</h4>
                             </div>
                             <div class="col-3">
-                              <input type="number" class="form-control" id="productCountInput`+i+`" onchange="calculadora(`+product.unitCost+`,`+ i +`)" placeholder="" required="" value="` + product.count + `" min="0">
+                              <input type="number" class="form-control" id="productCostInput`+i+`" onchange="calculadora(`+product.unitCost+`,`+ i +`)" placeholder="" required="" value="` + product.count + `" min="0">
                             </div>  
                         </div>
                     </div>
@@ -30,34 +30,26 @@ function showProductCart(productToCart) {
 function showCalculator(productToCart) {
     let array = productToCart.articles;
     let htmlContentToAppend = "";
+    // let price = array.unitCost;
+    // if (array.currency != "UYU") {
+    //     price = price * 40;
+    // }
     for (let i = 0; i < array.length; i++) {
             let product = array[i];
-            let price = product.unitCost;
-            if (product.currency != "UYU") {
-                price = price*40; 
-            }
             htmlContentToAppend += `
             
                 <div class="d-flex w-100 justify-content-between">
-                    <h4 style="text-align: right"> UYU <span id="costo`+i+`" >`+price * product.count+`</span></h4>
+                    <h4 style="text-align: right"> ` + product.currency +` <span id="costo`+i+`" >`+product.unitCost * product.count+`</span></h4>
                 </div>
         `
         document.getElementById("calculator").innerHTML = htmlContentToAppend;
     }
 }
-function calculadora(product, i){
-  let identInput = "productCountInput"+i;
+function calculadora(costo, i){
+  let identIput = "productCostInput"+i;
   let identCosto = "costo"+i;
-  let result = ""
-  if (product.currency != "UYU") {
-    
-    result = document.getElementById(identInput).value * product * 40;
-    document.getElementById(identCosto).innerHTML = result;
-  }else {
-
-    result = document.getElementById(identInput).value * product;
-    document.getElementById(identCosto).innerHTML = result;
-  }
+  let result = document.getElementById(identIput).value * costo;
+  document.getElementById(identCosto).innerHTML = result;
 }
 
 
