@@ -48,21 +48,6 @@ function showCalculator(productToCart) {
         subtotal();
     }
 }
-function subtotal (){
-    let items = document.getElementsByClassName("itemCalculadora");
-    let suma = 0;
-    let htmlContentToAppend ="";
-    for (let index = 0; index < items.length; index++) {
-        const numero = items[index];
-        suma += parseInt(numero.innerHTML);
-       }
-       htmlContentToAppend += `
-                <div class="d-flex w-100 justify-content-end mr-5">
-                    <p class="mr-2">subtotal</p><h4 style="text-align: right"> UYU <span>`+suma+`</span></h4>
-                </div> 
-        `
-       document.getElementById("subtotal").innerHTML = htmlContentToAppend;
-}
 function calculadora(costo, i){
   let identInput = "productCostInput"+i;
   let identCosto = "costo"+i;
@@ -78,6 +63,22 @@ function calculadora(costo, i){
   }
   subtotal();
 }
+function subtotal (){
+    let items = document.getElementsByClassName("itemCalculadora");
+    let suma = 0;
+    let htmlContentToAppend ="";
+    for (let index = 0; index < items.length; index++) {
+        const numero = items[index];
+        suma += parseInt(numero.innerHTML);
+       }
+       htmlContentToAppend += `
+                <div class="d-flex w-100 justify-content-end mr-5">
+                    <p class="mr-2">subtotal</p><h4 style="text-align: right"> UYU <span>`+suma+`</span></h4>
+                </div> 
+        `
+       document.getElementById("subtotal").innerHTML = htmlContentToAppend;
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
