@@ -42,26 +42,52 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="container-fluid col-mt-6">
+      <div class="text-center p-4">
+        <h2>Mi Perfil</h2>
+        <p class="lead">Registre sus datos</p>
+      </div>
     </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    <div class="container-fluid col-md-6 mt-6">
+      <form>
+        <div class="row">
+          <div class="col-6 mb-3">
+            <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="col-6">
+            <input type="text" id="apellido" class="form-control" placeholder="Apellido">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mb-3">
+            <input type="text" id="edad" class="form-control" placeholder="Edad">
+          </div>
+          <div class="col-6">
+            <input type="text" id="contacto" class="form-control" placeholder="Telefono de contacto">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mb-3">
+            <input type="text" id="email" class="form-control" placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <div class="col-6 mb-3">
+              <label for="exampleFormControlFile1">Example file input</label>
+            </div>
+            <div class="col">
+              <input type="file" id="foto" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+          <input type="button" id="button" class="btn btn-success" id="exampleFormControlFile1" onclick="setDatos()"
+            value="Guardar">
+        </div>
+      </form>
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+  </main>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

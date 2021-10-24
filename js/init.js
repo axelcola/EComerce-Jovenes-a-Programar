@@ -79,6 +79,7 @@ function showUser() {
   document.getElementById("nav").innerHTML += htmlContentToAppend;
 }
 showUser();
+;
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
