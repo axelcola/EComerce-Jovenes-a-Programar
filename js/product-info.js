@@ -67,8 +67,8 @@ function relatedProducts(array,relatedArray) {
             <div class="col-md-4 mb-5">
               <a href="products.html" class="card mb-4 shadow-sm custom-card">
                 <img class="bd-placeholder-img card-img-top"  src="` + product.imgSrc + `">
-                <h3 class="m-3">` + product.name + ` (` + product.soldCount + `)</h3>
-                <h5 class="m-3"> ` + product.currency + ` ` + product.cost + `</h5>
+                    <h3 class="m-3">` + product.name + ` (` + product.soldCount + `)</h3>
+                    <h5 class="m-3"> ` + product.currency + ` ` + product.cost + `</h5>
                 <div class="card-body">
                   <p class="card-text">` + product.description + `</p>
                 </div>
