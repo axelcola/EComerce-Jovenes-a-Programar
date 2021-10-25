@@ -1,5 +1,5 @@
-var product = {};
-var related = {};
+let product = {};
+let related = {};
 let today = new Date();
 let dd = today.getDate();
 let mm = today.getMonth() + 1;
@@ -56,15 +56,15 @@ function showImagesGallery(array) {
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
-function relatedProducts(array,selection) {
+function relatedProducts(array,relatedArray) {
 
     let htmlContentToAppend = "";
         for (let i = 0; i < array.length; i++) {
             let product = array[i];
-            if ( selection.relatedProducts.includes(i)){
+            if ( relatedArray.relatedProducts.includes(i)){
 
             htmlContentToAppend += `
-            <div class="col-md-4">
+            <div class="col-md-4 mb-5">
               <a href="products.html" class="card mb-4 shadow-sm custom-card">
                 <img class="bd-placeholder-img card-img-top"  src="` + product.imgSrc + `">
                 <h3 class="m-3">` + product.name + ` (` + product.soldCount + `)</h3>

@@ -41,7 +41,7 @@ function showCalculator(productToCart) {
             htmlContentToAppend += `
             
                 <div class="d-flex w-100 justify-content-between">
-                    <h4 style="text-align: right"> UYU <span class="itemCalculadora" id="costo`+i+`" >`+ price * product.count+`</span></h4><p class="mr-5">`+ product.name+`</p>
+                    <h5 style="text-align: right"> UYU <span class="itemCalculadora" id="costo`+i+`" >`+ price * product.count+`</span></h5><p class="mr-5">`+ product.name+`</p>
                 </div>
         `
         document.getElementById("calculator").innerHTML = htmlContentToAppend;
