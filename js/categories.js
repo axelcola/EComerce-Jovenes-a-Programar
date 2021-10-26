@@ -44,7 +44,7 @@ function showCategoriesList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))) {
 
             htmlContentToAppend += `
-            <div class="col-md-3 mb-6 m-10">
+            <div class="col-md-4 mb-5">
                 <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
                             <img class="bd-placeholder-img card-img-top" src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
                         <div class="card-body">
@@ -54,7 +54,6 @@ function showCategoriesList() {
                             <p class="card-text">` + category.description + `</p>
                             <small class="text-muted">` + category.productCount + ` artículos</small>
                         </div>
-                    </div>
                 </a>
             </div>
             `
