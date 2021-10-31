@@ -45,7 +45,7 @@ function showProductList() {
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
 
             htmlContentToAppend += `
-            <div class="col-md-4 mb-5">
+            <div class="col-md-4 col-lg-3 col-sm-6 mb-5">
                 <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
                     <img class="bd-placeholder-img card-img-top" src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     <div class="card-body">
@@ -140,7 +140,7 @@ document.getElementById("buscador").addEventListener("input", (event) => {
         product.description.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(busqueda.toUpperCase())) {
             
             htmlContentToAppend += `
-            <div class="col-md-4 mb-5">
+            <div class="col-md-4 col-lg-3 col-sm-6 mb-5">
                 <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
                     <img class="bd-placeholder-img card-img-top" src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     <div class="card-body">

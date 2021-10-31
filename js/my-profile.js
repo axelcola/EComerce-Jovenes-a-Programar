@@ -24,9 +24,9 @@ function getDatos() {
       console.log(datos);
 }
 function newPhoto() {
-      var preview = document.querySelector('img');
-      var file    = document.getElementById('inputPhoto').files[0];
-      var reader  = new FileReader();
+      let preview = document.getElementById('profilePhoto');
+      let file    = document.getElementById('inputPhoto').files[0];
+      let reader  = new FileReader();
     
       reader.onloadend = function () {
         preview.src = reader.result;
