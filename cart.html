@@ -52,43 +52,175 @@
         </div>
       </div>
       <div class="col-lg-5 mt-5">
-        <div id="calculator">
+        <div id="calculatorItems">
         </div>
         <div class="row" id="subtotal">
+        </div>
+        <div id="envio">
+        </div>
+        <div class="row" id="total">
 
         </div>
       </div>
     </div>
     <div class="class containter mt-5 mb-7 ml-5">
-      <h5 class="mb-3">Tipo de envío</h5>
+
+      <!-- boton de ventan -->
+      <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#staticBackdrop">
+        Forma de pago
+      </button>
+
+      <!-- ventana -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- formulario -->
+              <div class="creditCardForm">
+                <div class="heading">
+                  <h1>Forma de pago</h1>
+                </div>
+                <div class="payment">
+                  <form>
+                    <div class="form-group titular">
+                      <label for="titular">Titular</label>
+                      <input required="" type="text" class="form-control" id="titular">
+                    </div>
+                    <div class="form-group ci">
+                      <label for="ci">CI</label>
+                      <input required="" type="text" class="form-control" id="ci">
+                    </div>
+                    <div class="form-group" id="card-number-field">
+                      <label for="numeroDeTarjeta">Numero de Tarjeta</label>
+                      <input required="" type="text" class="form-control" id="numeroDeTarjeta">
+                    </div>
+                    <div class="form-group" id="card-number-field">
+                      <label for="codigoDeSeguridad">Codigo de Seguridad</label>
+                      <input required="" type="text" class="form-control" id="codigoDeSeguridad">
+                    </div>
+                    <div class="form-group" id="fechaDeExpiracion">
+                      <label required="">Vencimiento</label>
+                      <select required="" id="mesExpiracion">
+                        <option value="0">-----</option>
+                        <option value="01">January</option>
+                        <option value="02">February </option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                      <select required="" id="anoExpiracion">
+                        <option value="00"> 0000</option>
+                        <option value="16"> 2016</option>
+                        <option value="17"> 2017</option>
+                        <option value="18"> 2018</option>
+                        <option value="19"> 2019</option>
+                        <option value="20"> 2020</option>
+                        <option value="21"> 2021</option>
+                      </select>
+                    </div>
+                    <div class="form-group" id="botonPago">
+                      <button type="submit" class="btn btn-primary" id="Confirmar"
+                        onclick="setFormaDePago()">Confirmar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="col-7 mb-3">
+        <div class="form-group">
+          <h4>Dirección de envío</h4>
+          <label for="direccion">Dirección</label>
+          <input type="text" class="form-control" id="direccion" aria-describedby="emailHelp"
+            placeholder="Ej: 18 de Julio 1617">
+        </div>
+        <div class="form-group">
+          <label for="esquina">Esquina</label>
+          <input type="text" class="form-control" id="esquina" placeholder="Ex: Joaquin Requena">
+        </div>
+        <div class="form-group">
+          <label for="barrio">Barrio</label>
+          <input type="text" class="form-control" id="barrio" placeholder="Ex: Cordon">
+        </div>
+        <div class="form-group">
+          <label required="">Departamento</label>
+          <select id="departamento" required="">
+            <option value="0">--Departamento--</option>
+            <option value="01">Artigas</option>
+            <option value="02">Canelones</option>
+            <option value="03">Cerro Largo</option>
+            <option value="04">Colonia</option>
+            <option value="05">Durazno</option>
+            <option value="06">Flores</option>
+            <option value="07">Florida</option>
+            <option value="08">Lavalleja</option>
+            <option value="09">Maldonado</option>
+            <option value="10">Montevideo</option>
+            <option value="11">Payasandú</option>
+            <option value="13">Rio Negro</option>
+            <option value="14">Rivera</option>
+            <option value="15">Salto</option>
+            <option value="17">San José</option>
+            <option value="18">Soriano</option>
+            <option value="19">Tacuarembó</option>
+            <option value="19">Treinta y Tres</option>
+          </select>
+        </div>
+      </form>
+
+      <h5 class="mb-3 mt-3">Tipo de envío</h5>
       <div class="d-block my-3">
         <div class="custom-control custom-radio">
-          <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-          <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+          <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" onclick="metEnvio()"
+            checked="" required="">
+          <label class="custom-control-label" for="goldradio">Gold (15%)</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" onclick="metEnvio()"
+            required="">
           <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-          <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input"
+            onclick="metEnvio()" required="">
+          <label class="custom-control-label" for="standardradio">Estándar (5%)</label>
         </div>
+      </div>
     </div>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="container justify-content-left">
+      <button type="submit" class="btn btn-primary mt-3 mb-3" onclick="finalizarCompra(), setFormaDePago()">Finalizar Compra</button>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
