@@ -4,6 +4,7 @@
 let datosTarjeta = {}
 let arrayCart = [];
 let suma
+let productSuma
 function showProductCart(productToCart) {
     let array = productToCart.articles;
     let htmlContentToAppend = "";
@@ -11,7 +12,7 @@ function showProductCart(productToCart) {
         let product = array[i];
         htmlContentToAppend += `
             
-                <div class="list-group-item list-group-item-action">
+                <div id="productInCart`+i+`" class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-3">
                             <img src="` + product.src + `" alt="` + product.name + `" class="img-thumbnail">
@@ -23,13 +24,20 @@ function showProductCart(productToCart) {
                             <div class="col-3">
                               <input type="number" class="form-control" id="productCostInput`+ i + `" onchange="calculadora(` + product.unitCost + `,` + i + `)" placeholder="" required="" value="` + product.count + `" min="0">
                             </div>  
+                            <button type="button" onclick="deleteProduct('productInCart${i}', 'productForCalc${i}', ${product.unitCost} , ${product.currency==="USD" })">Eliminar</button>
                         </div>
                     </div>
                 </div>
         `
-
         document.getElementById("productsCart").innerHTML = htmlContentToAppend;
     }
+}
+function deleteProduct(idProduct, idCalc, price, currency){
+    console.log(document.getElementById(idProduct));
+    console.log(document.getElementById(idCalc));
+    if (currency){
+        productSuma = suma - price*40;
+    }else productSuma = suma - price;
 }
 function showCalculator(productToCart) {
     let array = productToCart.articles;
@@ -42,7 +50,7 @@ function showCalculator(productToCart) {
         }
         htmlContentToAppend += `
             
-                <div class="d-flex w-100 justify-content-between">
+                <div id="productForCalc`+i+`" class="d-flex w-100 justify-content-between">
                     <h5 style="text-align: right"> UYU <span class="itemCalculadora" id="costo`+ i + `" >` + price * product.count + `</span></h5><p class="mr-5">` + product.name + `</p>
                 </div>
         `
@@ -52,7 +60,7 @@ function showCalculator(productToCart) {
 }
 function metEnvio() {
     let envioradio = "";
-    let productSuma = 0;
+    productSuma = 0;
     let htmlContentToAppend = "";
     if (document.getElementById("goldradio").checked) {
         envioradio = "<h5>Envío: Gold (12%)</h5>";
