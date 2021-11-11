@@ -58,7 +58,7 @@ function onSignIn(googleUser) {
   location.href = "home.html";
 }
 function lock(){
-  if ( location.href != "index.html" && localStorage.getItem("usuario") === null) {
+  if ( location.href != "https://axelcola.github.io/JAP/index.html" && localStorage.getItem("usuario") === null) {
     location.href = "index.html";
   }
 }
@@ -66,7 +66,7 @@ function lock(){
 function showUser() {
   let user = localStorage.getItem("usuario");
   let htmlContentToAppend = user;
-  document.getElementById("user").innerHTML += htmlContentToAppend;
+  document.getElementById("nav").innerHTML += htmlContentToAppend;
 }
 showUser();
 ;
