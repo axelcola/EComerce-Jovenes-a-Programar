@@ -24,7 +24,7 @@ function showProductCart(productToCart) {
                             <div class="col-3">
                               <input type="number" class="form-control" id="productCostInput`+ i + `" onchange="calculadora(` + product.unitCost + `,` + i + `)" placeholder="" required="" value="` + product.count + `" min="0">
                             </div>  
-                            <button type="button" onclick="deleteProduct('productInCart${i}', 'productForCalc${i}', ${product.unitCost} , ${product.currency==="USD" })">Eliminar</button>
+                            <h4 type="button" class="text-right" onclick="deleteProduct('productInCart${i}', 'productForCalc${i}', ${product.unitCost} , ${product.currency==="USD" })"><i class="fas fa-trash-alt"></i></h4>
                         </div>
                     </div>
                 </div>
@@ -32,13 +32,17 @@ function showProductCart(productToCart) {
         document.getElementById("productsCart").innerHTML = htmlContentToAppend;
     }
 }
+
+
 function deleteProduct(idProduct, idCalc, price, currency){
-    console.log(document.getElementById(idProduct));
-    console.log(document.getElementById(idCalc));
+    document.getElementById(idProduct).remove();
+    document.getElementById(idCalc).remove();
     if (currency){
-        productSuma = suma - price*40;
-    }else productSuma = suma - price;
-}
+        suma = suma - price*40;
+        subtotal(); 
+    }else suma = suma - price ;
+        subtotal();} 
+
 function showCalculator(productToCart) {
     let array = productToCart.articles;
     let htmlContentToAppend = "";
@@ -63,7 +67,7 @@ function metEnvio() {
     productSuma = 0;
     let htmlContentToAppend = "";
     if (document.getElementById("goldradio").checked) {
-        envioradio = "<h5>Envío: Gold (12%)</h5>";
+        envioradio = "<h5>Envío: Gold (15%)</h5>";
         envioNumero = 0.15;
         productSuma = suma;
         productSuma = suma + (suma * envioNumero);
@@ -73,7 +77,7 @@ function metEnvio() {
         productSuma = suma;
         productSuma = suma + (suma * envioNumero);
     } else if (document.getElementById("standardradio").checked) {
-        envioradio = "<h5> Envío: Estandard (2%)</h5>";
+        envioradio = "<h5> Envío: Estandard (5%)</h5>";
         envioNumero = 0.05;
         productSuma = suma;
         productSuma = suma + (suma * envioNumero);

@@ -65,18 +65,8 @@ function lock(){
 
 function showUser() {
   let user = localStorage.getItem("usuario");
-  let htmlContentToAppend = ` <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                ` + user + `</button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
-                                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-                                  <a class="dropdown-item" href="index.html" onclick="localStorage.clear()">Cerrar sesión</a>
-                                </div>
-                              </div>
-                            `;
-  document.getElementById("nav").innerHTML += htmlContentToAppend;
+  let htmlContentToAppend = user;
+  document.getElementById("user").innerHTML += htmlContentToAppend;
 }
 showUser();
 ;
