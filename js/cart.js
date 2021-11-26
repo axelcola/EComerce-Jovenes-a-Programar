@@ -34,15 +34,6 @@ function showProductCart(productToCart) {
 }
 
 
-function deleteProduct(idProduct, idCalc, price, currency){
-    document.getElementById(idProduct).remove();
-    document.getElementById(idCalc).remove();
-    if (currency){
-        suma = suma - price*40;
-        subtotal(); 
-    }else suma = suma - price ;
-        subtotal();} 
-
 function showCalculator(productToCart) {
     let array = productToCart.articles;
     let htmlContentToAppend = "";
@@ -61,6 +52,22 @@ function showCalculator(productToCart) {
         document.getElementById("calculatorItems").innerHTML = htmlContentToAppend;
         subtotal();
     }
+}
+
+function calculadora(costo, i) {
+    let identInput = "productCostInput" + i;
+    let identCosto = "costo" + i;
+    let result = ""
+    if (arrayCart[i].currency != "UYU") {
+
+        result = document.getElementById(identInput).value * costo * 40;
+        document.getElementById(identCosto).innerHTML = result;
+    } else {
+
+        result = document.getElementById(identInput).value * costo;
+        document.getElementById(identCosto).innerHTML = result;
+    }
+    subtotal();
 }
 function metEnvio() {
     let envioradio = "";
@@ -89,21 +96,6 @@ function metEnvio() {
     `
     document.getElementById("total").innerHTML = htmlContentToAppend;
     document.getElementById("envio").innerHTML = envioradio;
-}
-function calculadora(costo, i) {
-    let identInput = "productCostInput" + i;
-    let identCosto = "costo" + i;
-    let result = ""
-    if (arrayCart[i].currency != "UYU") {
-
-        result = document.getElementById(identInput).value * costo * 40;
-        document.getElementById(identCosto).innerHTML = result;
-    } else {
-
-        result = document.getElementById(identInput).value * costo;
-        document.getElementById(identCosto).innerHTML = result;
-    }
-    subtotal();
 }
 function subtotal() {
     let items = document.getElementsByClassName("itemCalculadora");
@@ -152,6 +144,15 @@ function getFormaDePago() {
 
     console.log(datosTarjeta);
 }
+function deleteProduct(idProduct, idCalc, price, currency){
+    document.getElementById(idProduct).remove();
+    document.getElementById(idCalc).remove();
+    if (currency){
+        suma = suma - price*40;
+        subtotal(); 
+    }else suma = suma - price ;
+        subtotal();} 
+
 function finalizarCompra(){
     if (document.getElementById("titular").value == "" ||
     document.getElementById("ci").value == "" ||

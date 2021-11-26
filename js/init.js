@@ -1,12 +1,12 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
-const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
-const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
-// const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json"; JSON alternativo con un solo producto
-const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/654.json";
-const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const CATEGORIES_URL = "http://localhost:3000/categoriesUrl";
+const PUBLISH_PRODUCT_URL = "http://localhost:3000/publishProduct";
+const CATEGORY_INFO_URL = "http://localhost:3000/categoryInfoUrl";
+const PRODUCTS_URL = "http://localhost:3000/productsUrl";
+const PRODUCT_INFO_URL = "http://localhost:3000/productInfoUrl";
+const PRODUCT_INFO_COMMENTS_URL = "http://localhost:3000/productCommentsUrl";
+// const CART_INFO_URL = "http://localhost:3000/singlecartInfoUrl";
+const CART_INFO_URL = "http://localhost:3000/cartInfoUrl";
+const CART_BUY_URL = "http://localhost:3000/buyMessage";
 
 var showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
