@@ -4,7 +4,8 @@
 
 <head>
   <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="83129566340-dg7hp1b4uasajtp0iecoubt7slel2l1k.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="83129566340-dg7hp1b4uasajtp0iecoubt7slel2l1k.apps.googleusercontent.com">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,15 +59,15 @@
           <a class="nav-link" href="sell.html">Sell</a>
         </li>
         <li class="nav-item dropdown">
-          <a id="nav" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-            data-toggle="dropdown" aria-expanded="false">
+          <a id="nav" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-expanded="false">
 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item " href="cart.html">Carrito</a>
             <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="index.html" onclick="localStorage.clear()">Cerrar Sesión</a>
+            <a class="dropdown-item" href="index.html" onclick="cerrarSesion()">Cerrar Sesión</a>
           </div>
         </li>
       </ul>
@@ -262,9 +263,9 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
-   <script src="js/init.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-    <div id="google" class="g-signin2 d-none" data-theme="dark"></div>
+  <script src="js/init.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <div id="google" class="g-signin2 d-none" data-theme="dark"></div>
   <script src="js/sell.js"></script>
 </body>
 
