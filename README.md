@@ -1,7 +1,7 @@
-Ecomerce Proyecto de egreso JAP 2021
+Ecomerce final proyect of JAP 2021
+Check out the final result [here](https://axelcola.github.io/JAP/).
+IMPORTANT: To entry this page, login with any name and password.
 
-Proyecto de el programa Jovenes a Programar del Plan Ceibal.
-Trabajamos todo el año creando esta pagina con el fin de aprender lo mas necesario, basico y escencial del desarrollo fornt end.
+Proyect of program "Jovenes a Programar" of Plan Ceibal.
+We work together all of year creating this page to learn the most necessary and essential of front end development.
 
-https://axelcola.github.io/JAP/
-Aclaración: Para ingesar entrar con cualquier nombre de usuario y contraseña. 
