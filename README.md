@@ -1,4 +1,5 @@
 Ecomerce final proyect of JAP 2021
+
 Check out the final result [here](https://axelcola.github.io/JAP/).
 IMPORTANT: To entry this page, login with any name and password.
 
