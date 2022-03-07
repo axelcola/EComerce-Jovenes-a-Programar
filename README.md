@@ -1,4 +1,4 @@
-<h1>Ecomerce final proyect of JAP 2021</h1>
+<h1>E-comerce final project of JAP 2021</h1>
 
 Check out the final result [here](https://axelcola.github.io/JAP/).
 
